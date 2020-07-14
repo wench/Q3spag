@@ -304,3 +304,8 @@ char *Sys_DefaultInstallPath(void)
 	return Sys_Cwd();
 }
 
+void Sys_MakeExecutable(void*addr, int size)
+{
+	DWORD old;
+	VirtualProtect(addr, size, PAGE_EXECUTE_READWRITE, &old);
+}

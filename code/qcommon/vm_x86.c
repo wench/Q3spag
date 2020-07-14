@@ -1056,6 +1056,7 @@ void VM_Compile( vm_t *vm, vmHeader_t *header ) {
 	vm->codeLength = compiledOfs;
 	vm->codeBase = Hunk_Alloc( compiledOfs, h_low );
 	Com_Memcpy( vm->codeBase, buf, compiledOfs );
+	Sys_MakeExecutable(vm->codeBase, compiledOfs);
 	Z_Free( buf );
 	Z_Free( jused );
 	Com_Printf( "VM file %s compiled to %i bytes of code\n", vm->name, compiledOfs );

@@ -451,6 +451,7 @@ void *Hunk_AllocDebug( int size, ha_pref preference, char *label, char *file, in
 #else
 void *Hunk_Alloc( int size, ha_pref preference );
 #endif
+void Sys_MakeExecutable(void*aqddr, int size);
 
 #ifdef __linux__
 // https://zerowing.idsoftware.com/bugzilla/show_bug.cgi?id=371
